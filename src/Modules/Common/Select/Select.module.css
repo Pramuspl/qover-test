@@ -1,0 +1,31 @@
+/*select {*/
+    /*margin-left: 10px;*/
+    /*display: inline-block;*/
+    /*height:30px;*/
+    /*width: 150px;*/
+    /*padding: 2px 10px 2px 2px;*/
+    /*outline: none;*/
+    /*color: white;*/
+    /*border: 1px solid var(--color-grayDarker);*/
+    /*border-radius: 4px;*/
+    /*box-shadow: inset 1px 1px 2px var(--color-grayDarker);*/
+    /*background: var(--color-grayDarker);*/
+/*}*/
+
+/*!* Select arrow styling *!*/
+/*.fancyArrow {*/
+    /*width: 23px;*/
+    /*height: 28px;*/
+    /*position: absolute;*/
+    /*display: inline-block;*/
+    /*top: 4px;*/
+    /*right: 3px;*/
+    /*background: right / 90%  no-repeat var(--color-grayDarker);*/
+    /*pointer-events: none;*/
+    /*color: #00FFCE;*/
+/*}*/
+
+/*.selectBox {*/
+    /*position: relative;*/
+    /*display: inline-block;*/
+/*}*/

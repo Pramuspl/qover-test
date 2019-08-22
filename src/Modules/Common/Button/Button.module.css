@@ -1,0 +1,96 @@
+.btn {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnLink {
+    text-decoration: none;
+}
+
+
+
+.primary {
+    background-color: var(--color-caribbeanGreen);
+    width: 100%;
+    height: 4.5vh;
+    /* margin: 0.4vw 0; */
+    margin-bottom : 0.4vh;
+    border: none;
+    border-radius: 22px;
+    outline:none;
+    font-family: 'FuturaPTMedium';
+    transition: 0.2s;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: black!important;
+
+}
+
+.primary:hover {
+    background-color: var(--color-caribbeanGreenDark);
+    /*color : var(--color-caribbeanGreen);*/
+    /*border: 1px solid var(--color-caribbeanGreen);*/
+    /*border-radius: 22px;*/
+    /*outline:none;*/
+    /*font-family: 'FuturaPTMedium';*/
+    /*font-size: 18px;*/
+    /*transition: 0.2s;*/
+    cursor: pointer;
+}
+
+.primary:active {
+    background-color: var(--color-caribbeanGreen);
+}
+
+.secondary{
+    background-color: transparent;
+    color : var(--color-caribbeanGreen)!important;
+    border: 1px solid var(--color-caribbeanGreen);
+    width: 100%;
+    height: 4vh;
+    line-height: 30px;
+    box-sizing: border-box;
+    /* margin: 0.4vw 0; */
+    margin-bottom : 0.4vh;
+    border-radius: 22px;
+    outline:none;
+    font-family: 'FuturaPTMedium';
+    transition: 0.2s;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    padding: 0 20px;
+}
+.secondary.withIcon {
+    padding: 0 20px 0 10px;
+}
+.secondary .icon, .secondary .icon::before {
+    height: 25px;
+    line-height: 25px;
+    font-size: 1.2em;
+}
+
+.secondary:hover {
+    /*background-color: var(--color-caribbeanGreen);*/
+    border: 1px solid var(--color-caribbeanGreenDark);
+    color: var(--color-caribbeanGreenDark);
+    /*color: black;*/
+    /*border: none;*/
+    border-radius: 22px;
+    outline:none;
+    font-family: 'FuturaPTMedium';
+    /*font-size: 0.9em;*/
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+

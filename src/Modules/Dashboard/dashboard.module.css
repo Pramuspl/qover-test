@@ -1,0 +1,12 @@
+.dashboardWrapper {
+    display: flex;
+}
+
+.dashboardContent {
+    flex-grow: 2;
+}
+
+.wrapper {
+    height: 100vh;
+    background-image: linear-gradient(122deg, #317bda, #33c3c8);
+}

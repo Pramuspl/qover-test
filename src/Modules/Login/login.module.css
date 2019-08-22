@@ -1,0 +1,84 @@
+.top {
+    background: black;
+    background-image: url("/assets/images/bg.jpg");
+    background-size: 100% 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 2vw;
+    transition: 0.2s;
+}
+
+.loginContainer, .inputsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer {
+    padding: 40px 75px;
+    margin:10px;
+    background-color: var(--color-backgroundDark);
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    .loginContainer {
+        padding: 40px 10px;
+    }
+}
+
+.inputsContainer {
+    margin-top: 0.5vw;
+    /*margin-left: -5vw;*/
+}
+
+.inputsContainer input[type=text], input[type=password], input[type=email] {
+    /*text-align: center;*/
+    width: 250px;
+    height: 16px;
+    margin: 2% 0;
+}
+/*input[type="submit"] {*/
+    /*height: auto;*/
+    /*min-height: 45px;*/
+/*}*/
+.buttonsContainer {
+    /*text-align: end;*/
+}
+
+.buttonsContainer > p {
+    /*margin-right: 0.6vw;*/
+    margin: 1%;
+}
+
+.link {
+    color: inherit;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: var(--color-caribbeanGreen);
+    cursor: pointer;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.infoText {
+    color: var(--color-grayLight);
+}
+
+.link {
+    background:none;
+    /*color:inherit;*/
+    border:none;
+    /*padding:0!important;*/
+    font: inherit;
+    /*border is optional*/
+    /*border-bottom:1px solid #444;*/
+    cursor: pointer;
+}

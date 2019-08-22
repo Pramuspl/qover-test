@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import Login from './Modules/Login/login';
+import Dashboard from './Modules/Dashboard/dashboard';
+
+const BASE_URL = process.env.PUBLIC_URL;
+
+const App = () => (
+    <div className='wrapper'>
+        <Switch>
+            {/*/!*<Route path={BASE_URL + '/dashboard/vr-experiences'} component={Dashboard} />*!/*/}
+            <Route exact path={BASE_URL + '/'} component={Login} />
+            <Route exact path={BASE_URL + '/dashboard'} component={Dashboard} />
+        </Switch>
     </div>
-  );
-}
+);
 
 export default App;
