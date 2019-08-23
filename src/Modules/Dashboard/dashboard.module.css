@@ -1,5 +1,14 @@
-.dashboardWrapper {
+.dashboardContainer {
+    height: 40vh;
+    width: 40vw;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 #595959;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #5b7289;
+    padding: 0 200px;
 }
 
 .dashboardContent {
@@ -9,4 +18,22 @@
 .wrapper {
     height: 100vh;
     background-image: linear-gradient(122deg, #317bda, #33c3c8);
+}
+
+.formFieldsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.ageInput, .valueInput {
+    width: 100px;
+    height: 50px;
+}
+
+.getPrice{
+    background-color: #317bda !important;
+    color: white !important;
+    text-transform: none !important;
+    padding: 15px 0 !important;
+    font-weight: 800 !important;
 }
