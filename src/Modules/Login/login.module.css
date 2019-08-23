@@ -5,22 +5,12 @@
     flex-direction: column;
 }
 
-.centerContent {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
 .logo {
     margin: 30px;
     width: 6vw;
 }
 
 .loginContainer {
-    height: 40vh;
     width: 20vw;
     background: white;
     border-radius: 4px;

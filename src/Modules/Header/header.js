@@ -1,15 +1,13 @@
 import React from 'react';
-
-import styles from './header.module.css';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
+import styles from './header.module.css';
 import { logoutAction } from '../../Helpers/Auth/auth.actions.js';
-
-import { connect } from 'react-redux';
 
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 
-const BASE_URL = process.env.PUBLIC_URL;
+import { BASE_URL } from '../../Helpers/utils';
 
 const Header = (props) => {
   const { loggedIn, history } = props;
@@ -35,7 +33,7 @@ const Header = (props) => {
   };
   return (
       <div className={styles.header}>
-        <div className={styles.links}>
+        <div>
           {location && location === '/' ? renderLandingPageLinks() : renderLoggedInPageLinks()}
         </div>
       </div>

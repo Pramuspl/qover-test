@@ -1,5 +1,4 @@
 import { firebaseAuth } from '../FirebaseInterface';
-// import { gtagHelper } from '../../../../Helpers/gtag.helper';
 
 export const loginAction = credentials => {
   return (dispatch) => {

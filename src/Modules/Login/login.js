@@ -1,24 +1,21 @@
 import React, {Component} from 'react';
+import {compose} from 'redux';
+import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {NavLink} from 'react-router-dom';
 
 import {loginAction} from '../../Helpers/Auth/auth.actions.js';
 
 import Header from '../Header/header';
-
 import {Input, InputLabel, Button} from '@material-ui/core';
 
 import styles from './login.module.css';
-import {compose} from 'redux';
-import {connect} from 'react-redux';
 
 import logo from '../../assets/img/qover_logo.svg';
 import toggleOn from '../../assets/img/toggle-on.svg';
 
-const BASE_URL = process.env.PUBLIC_URL;
+import { BASE_URL } from '../../Helpers/utils';
 
 class Login extends Component {
-
 
     state = {
         email: '',
@@ -83,7 +80,6 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         loggedIn: !state.firebase.auth.isEmpty,
         errorMessage: state.auth.errorMessage

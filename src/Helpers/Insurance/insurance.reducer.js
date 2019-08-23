@@ -1,30 +1,19 @@
 const defaultState = {
-  errorMessage: null
+  global: 0,
+  universal: 0
 };
 
-const authReducer = (state = defaultState, action) => {
+const insuranceReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'LOGIN_ERROR':
-      console.log(`Login failed: ${action.error}`);
+    case 'SET_INSURANCE_VALUES':
       return {
         ...state,
-        errorMessage: 'Incorrect login or password'
-      };
-    case 'LOGIN_SUCCESS':
-      console.log('Login success!');
-      return {
-        ...state,
-        errorMessage: null
-      };
-    case 'LOGOUT_SUCCESS':
-      console.log('Logout success!');
-      return {
-        ...state,
-        errorMessage: null
+        global: action.insuranceValues.global,
+        universal: action.insuranceValues.universal
       };
     default:
       return state;
   }
 };
 
-export default authReducer;
+export default insuranceReducer;

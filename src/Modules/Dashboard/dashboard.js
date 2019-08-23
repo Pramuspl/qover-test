@@ -1,21 +1,28 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
 
-import './dashboard.module.css';
+import { BASE_URL } from '../../Helpers/utils';
+import { setInsuranceValues } from '../../Helpers/Insurance/insurance.actions.js';
+
+import {firebaseFunctions} from '../../Helpers/FirebaseInterface'
 import Header from '../Header/header';
-import {Route, Switch} from 'react-router-dom';
-
 import styles from './dashboard.module.css';
 
 import {OutlinedInput, Select, MenuItem, Button} from '@material-ui/core';
 import LabeledInput from '../Common/LabeledInput/LabeledInput'
 
-import {firebaseFunctions} from '../../Helpers/FirebaseInterface'
-
-
-import {connect} from 'react-redux';
-// import { BASE_URL } from './../../Helpers/utils';
-
 const Dashboard = (props) => {
+
+    const {
+        wrapper,
+        dashboardContainer,
+        formFieldsContainer,
+        ageInput,
+        errorMessage,
+        carInput,
+        valueInput,
+        getPrice
+    } = styles;
 
     const carValues = [
         {name: "Audi", value: 'audi'},
@@ -33,9 +40,7 @@ const Dashboard = (props) => {
 
     const formRef = React.createRef();
 
-
     useEffect(() => {
-        // callback to parent that set props
         formRef.current.addEventListener('submit', function (e) {
             e.preventDefault();
         });
@@ -60,7 +65,7 @@ const Dashboard = (props) => {
     };
 
     const getPrice = () => {
-        if (!ageError & !priceError){
+        if (!ageError && !priceError){
             firebaseFunctions.httpsCallable('getPrice')({
                 age: age,
                 car: car,
@@ -69,43 +74,41 @@ const Dashboard = (props) => {
                 if (result.data.type==="ERROR"){
                     setServerErrorMessage(result.data.value)
                 } else if (result.data.type==="SUCCESS"){
-                    console.log(result);
-                    setServerErrorMessage(null)
+                    props.setInsuranceValues(result.data.value);
+                    setServerErrorMessage(null);
+                    props.history.push(BASE_URL + '/offer/');
                 }
             });
         }
     };
         return (
-            <div className={styles.wrapper}>
+            <div className={wrapper}>
                 <Header history={props.history}/>
                 <div className="centerContent">
-                    <form ref={formRef} className={styles.dashboardContainer}>
-                        <div className={styles.formFieldsContainer}>
+                    <form ref={formRef} className={dashboardContainer}>
+                        <div className={formFieldsContainer}>
                             <LabeledInput label="Age">
                                 <OutlinedInput error={ageError} type='number' id='age' variant="outlined" onChange={(e)=>validateAge(e.target.value)}
                                                required={true}
-                                               className={styles.ageInput}/>
-                                <span className={styles.errorMessage}>{ageError}</span>
+                                               className={ageInput}/>
+                                <span className={errorMessage}>{ageError}</span>
                             </LabeledInput>
                             <LabeledInput label="Car">
                                 <Select value={car} id='car' variant="outlined" onChange={(e)=>setCar(e.target.value)} required={true}
-                                        className={styles.carInput} input={<OutlinedInput />}>
+                                        className={carInput} input={<OutlinedInput />}>
                                     {carValues.map(item => (<MenuItem value={item.value}>{item.name}</MenuItem>))}
-                                    {/*<MenuItem value={"Audi"}>Ten</MenuItem>*/}
-                                    {/*<MenuItem value={"BMW"}>Twenty</MenuItem>*/}
-                                    {/*<MenuItem value={"Porsche"}>Thirty</MenuItem>*/}
                                 </Select>
                             </LabeledInput>
                             <LabeledInput label="Value">
                                 <OutlinedInput error={priceError} type='number' id='price' variant="outlined" onChange={(e)=>validatePrice(e.target.value)}
                                                required={true}
-                                               className={styles.valueInput}/><span className={priceError ? styles.errorMessage : null}>€ </span>
+                                               className={valueInput}/><span className={priceError ? errorMessage : null}>€ </span>
 
-                                <span className={styles.errorMessage}>{priceError}</span>
+                                <span className={errorMessage}>{priceError}</span>
                             </LabeledInput>
                         </div>
-                        <p className={!serverErrorMessage ? 'invisible' : styles.errorMessage}>{serverErrorMessage || '&nbsp'}</p>
-                        <Button size="large" type="submit" className={styles.getPrice} onClick={getPrice}>Get a
+                        <p className={!serverErrorMessage ? 'invisible' : errorMessage}>{serverErrorMessage || '&nbsp'}</p>
+                        <Button size="large" type="submit" className={getPrice} onClick={getPrice}>Get a
                             price</Button>
                     </form>
                 </div>
@@ -113,10 +116,10 @@ const Dashboard = (props) => {
         );
 };
 
-const mapStateToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        auth: state.firebase.auth
+        setInsuranceValues: (insuranceValues) => dispatch(setInsuranceValues(insuranceValues))
     };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(null,mapDispatchToProps)(Dashboard);

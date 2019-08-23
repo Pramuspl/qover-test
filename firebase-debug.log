@@ -1,0 +1,34 @@
+[debug] [2019-08-23T13:26:40.030Z] ----------------------------------------------------------------------
+[debug] [2019-08-23T13:26:40.032Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Adrian\AppData\Local\Yarn\Data\global\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-08-23T13:26:40.032Z] CLI Version:   7.2.4
+[debug] [2019-08-23T13:26:40.032Z] Platform:      win32
+[debug] [2019-08-23T13:26:40.032Z] Node Version:  v8.12.0
+[debug] [2019-08-23T13:26:40.033Z] Time:          Fri Aug 23 2019 15:26:40 GMT+0200 (Środkowoeuropejski czas letni)
+[debug] [2019-08-23T13:26:40.033Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-23T13:26:40.040Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-23T13:26:40.041Z] > authorizing via signed-in user
+[debug] [2019-08-23T13:26:40.041Z] [iam] checking project qover-test-51367 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-08-23T13:26:40.042Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/qover-test-51367:testIamPermissions  
+
+[debug] [2019-08-23T13:26:40.870Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-23T13:26:40.872Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/qover-test-51367  
+ 
+[debug] [2019-08-23T13:26:41.145Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'qover-test-51367'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-08-23T13:26:43.069Z] >>> HTTP REQUEST PUT https://qover-test-51367.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2019-08-23T13:26:43.644Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database qover-test-51367 is valid
+[debug] [2019-08-23T13:26:43.652Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/qover-test-51367  
+ 

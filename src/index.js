@@ -10,7 +10,6 @@ import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import {getFirebase, reactReduxFirebase } from 'react-redux-firebase';
-import app from './Helpers/FirebaseInterface';
 
 const store = createStoreWithFirebase(rootReducer, applyMiddleware(thunk));
 

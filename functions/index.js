@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
 
-exports.getPrice = functions.region("europe-west1").https.onCall((data, context) => {
+exports.getPrice = functions.region("europe-west1").https.onCall((data) => {
     if (data.price<5000){
         return {
             type: 'ERROR',
