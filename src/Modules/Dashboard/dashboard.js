@@ -10,6 +10,7 @@ import styles from './dashboard.module.css';
 
 import {OutlinedInput, Select, MenuItem, Button} from '@material-ui/core';
 import LabeledInput from '../Common/LabeledInput/LabeledInput'
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 const Dashboard = (props) => {
 
@@ -21,7 +22,8 @@ const Dashboard = (props) => {
         errorMessage,
         carInput,
         valueInput,
-        getPrice
+        getPriceBtn,
+        selectIcon
     } = styles;
 
     const carValues = [
@@ -87,7 +89,7 @@ const Dashboard = (props) => {
                 <div className="centerContent">
                     <form ref={formRef} className={dashboardContainer}>
                         <div className={formFieldsContainer}>
-                            <LabeledInput label="Age">
+                            <LabeledInput label="Age of the driver">
                                 <OutlinedInput error={ageError} type='number' id='age' variant="outlined" onChange={(e)=>validateAge(e.target.value)}
                                                required={true}
                                                className={ageInput}/>
@@ -95,11 +97,11 @@ const Dashboard = (props) => {
                             </LabeledInput>
                             <LabeledInput label="Car">
                                 <Select value={car} id='car' variant="outlined" onChange={(e)=>setCar(e.target.value)} required={true}
-                                        className={carInput} input={<OutlinedInput />}>
+                                        className={carInput} classes={{icon: selectIcon}} IconComponent={ExpandMore} input={<OutlinedInput />}>
                                     {carValues.map(item => (<MenuItem value={item.value}>{item.name}</MenuItem>))}
                                 </Select>
                             </LabeledInput>
-                            <LabeledInput label="Value">
+                            <LabeledInput label="Purchase price">
                                 <OutlinedInput error={priceError} type='number' id='price' variant="outlined" onChange={(e)=>validatePrice(e.target.value)}
                                                required={true}
                                                className={valueInput}/><span className={priceError ? errorMessage : null}>€ </span>
@@ -108,7 +110,7 @@ const Dashboard = (props) => {
                             </LabeledInput>
                         </div>
                         <p className={!serverErrorMessage ? 'invisible' : errorMessage}>{serverErrorMessage || '&nbsp'}</p>
-                        <Button size="large" type="submit" className={getPrice} onClick={getPrice}>Get a
+                        <Button size="large" type="submit" className={getPriceBtn} onClick={getPrice}>Get a
                             price</Button>
                     </form>
                 </div>

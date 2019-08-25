@@ -1,11 +1,85 @@
 .card {
-    width: 15vw;
+    width: 20vw;
     background: white;
     border-radius: 4px;
-    box-shadow: 0 1px 1px 0 #595959;
+    box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.3);
     display: flex;
     flex-direction: column;
-    color: #5b7289;
-    padding: 20px;
+    color: #484848;
     margin: 10px;
+    font-weight: 600;
+    font-family: Roboto;
+    text-align: center;
+}
+
+.activeCard {
+    background: #31cfda;
+    color: white;
+    box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.5);
+}
+
+.normalFont {
+    font-weight: normal;
+}
+
+.cost {
+    background-color: rgba(49, 207, 218, 0.05);
+    font-size: 3em;
+    border-top:    1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    color: #31cfda;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.activeCard .cost {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-top:    1px solid #2abfc9;
+    border-bottom: 1px solid #2abfc9;
+    color: inherit;
+}
+
+.costNote {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.detailsContainer {
+
+}
+
+.detail {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.activeCard .detail {
+    border-bottom: 1px solid #2abfc9;
+}
+
+.euroSign {
+    font-size: 0.6em;
+}
+
+.button {
+    border-radius: 5px !important;
+    padding: 12px 8px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+    margin: 20px !important;
+    background-color: #31cfda !important;
+    color: white !important;
+}
+
+.activeCard .button {
+    background-color: white !important;
+    color: #31cfda !important;
+}
+
+.btnIcon {
+    margin-right: 10px;
 }

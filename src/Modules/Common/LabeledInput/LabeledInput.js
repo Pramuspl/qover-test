@@ -7,7 +7,7 @@ const LabeledInput = ({ children, label, id, className }) => {
   return (
     <span id={id} className={style.labeledInput + ' ' + className}>
       <label className={style.label} htmlFor={id}>{label}</label>
-      <span className="inputContainer">{children}</span>
+      <span className={style.inputContainer}>{children}</span>
     </span>
   );
 };

@@ -1,3 +1,13 @@
+.labeledInput {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
 .label{
-    margin-right: 10px;
+    width: 150px;
+}
+
+.inputContainer {
 }

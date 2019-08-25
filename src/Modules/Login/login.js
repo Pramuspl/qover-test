@@ -73,6 +73,7 @@ class Login extends Component {
                                 className={styles.signin}>Sign in to your account</Button>
                     </form>
                     <p className={styles.requestAccount}>Don&apos;t have an account? <span>Ask access</span></p>
+                    <span className={styles.footer}>© Qover 2017</span>
                 </div>
             </div>
         );

@@ -3,7 +3,7 @@
     width: 40vw;
     background: white;
     border-radius: 4px;
-    box-shadow: 0 2px 2px 0 #595959;
+    box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,6 +14,7 @@
 .wrapper {
     height: 100vh;
     background-image: linear-gradient(122deg, #317bda, #33c3c8);
+    overflow: hidden;
 }
 
 .formFieldsContainer{
@@ -31,14 +32,22 @@
     width: 300px;
 }
 
+.selectIcon {
+    color: #31cfda !important;
+    top: inherit !important;
+    font-size: 2.5rem !important;
+    margin-right: 5px !important;
+}
+
 .errorMessage {
     color: red;
 }
 
-.getPrice{
-    background-color: #317bda !important;
+.getPriceBtn{
+    background-color: #31cfda !important;
     color: white !important;
     text-transform: none !important;
     padding: 15px 0 !important;
     font-weight: 800 !important;
+    width: 200px;
 }

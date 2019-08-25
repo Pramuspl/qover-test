@@ -3,4 +3,3 @@ export const setInsuranceValues = insuranceValues => ({
   insuranceValues
 });
 
-
